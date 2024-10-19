@@ -10,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.WebHost.UseUrls("http://*:7000");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

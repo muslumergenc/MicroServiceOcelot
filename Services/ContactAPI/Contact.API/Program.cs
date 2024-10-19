@@ -1,5 +1,4 @@
 using Contact.API.Infrastructure;
-using Contact.API.Models;
 using Contact.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.WebHost.UseUrls("http://*:9000");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
